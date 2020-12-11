@@ -4,6 +4,8 @@
 
 Se você chegou até aqui é porque encontrou o repositório do MyWave! Esse projeto é parte da entrega do último assignment do Gama Experience #36, onde o objetivo era criar uma startup do zero em 1 semana e meia! 🙀
 
+Aqui você encontra o código do _protótipo_ que deu suporte à apresentação do projeto.
+
 ## Sobre o projeto
 
 <img src="./presentation.gif"/>
@@ -12,7 +14,7 @@ O MyWave é o app para os surfistas que querem manter um diário de bordo com to
 
 Além dessa feature, o MyWave conta com recomendações de praias dos outros usuários e forecasts do tempo na praia para os próximos dias, publicidade direcionada (nada de intrusos!), além de gameficação interna onde o usuário ganha pontos e sobe de nível ao realizar tarefas.
 
-O app foi todo codado em React Native utilizando o Expo.
+O protótipo foi todo codado em React Native utilizando o Expo.
 
 __Mahalo__ 🌺
 
