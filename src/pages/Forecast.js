@@ -2,13 +2,24 @@ import React from 'react'
 import {View, Text, ScrollView, StyleSheet, Image} from 'react-native'
 import {Feather, FontAwesome} from '@expo/vector-icons'
 import {RectButton} from 'react-native-gesture-handler'
+import {BorderlessButton} from 'react-native-gesture-handler'
+import {useNavigation} from '@react-navigation/native'
+
+import Ad from '../components/Ad'
 
 const log2 = require('../images/log2.png')
+const forecastExample1 = require('../images/forecastExample1.png')
+const forecastExample2 = require('../images/forecastExample2.png')
+const forecastExample3 = require('../images/forecastExample3.png')
+const forecastExample4 = require('../images/forecastExample4.png')
+const forecastAd = require('../images/marketAd.png')
 
 const Forecast = () => {
+    const navigator = useNavigation()
+
     return (
         <View style={{flex: 1, backgroundColor: '#fff'}}>
-            <ScrollView contentContainerStyle={{alignItems: 'center', flex: 1}}>
+            <ScrollView contentContainerStyle={{alignItems: 'center'}}>
                 <RectButton style={{marginTop: 30}}>
                     <View style={styles.searchBox}>
                         <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -24,6 +35,18 @@ const Forecast = () => {
                         <FontAwesome name="star" size={20} color="#2694BF" />
                     </View>
                     <Image source={log2} resizeMode={'contain'} />
+                </View>
+                <Image source={forecastExample1} style={{marginTop: 43}} />
+                <Image source={forecastExample2} style={{marginTop: 25}} />
+                <Image source={forecastExample3} style={{marginTop: 25}} />
+                <View style={{marginTop: 40}}>
+                    <Ad ad={forecastAd} url={() => alert('goes to volcom')} />
+                </View>
+                <Image source={forecastExample4} style={{marginTop: 25}} />
+                <View style={styles.button}>
+                    <BorderlessButton onPress={() => navigator.navigate('Beach')}>
+                        <Text style={{fontFamily: 'Roboto_700Bold', fontSize: 17, color: '#FFFFFF'}}>Veja o que já falaram dessa praia</Text>
+                    </BorderlessButton>
                 </View>
             </ScrollView>
         </View>
@@ -59,7 +82,25 @@ const styles = StyleSheet.create({
         marginTop: 37,
         padding: 20,
         alignItems: 'center'
-      }
+    },
+    button: {
+        width: 331,
+        height: 61,
+        backgroundColor: "#0C4459",
+        shadowOffset: {
+            width: 0,
+            height: 4
+        },
+        shadowRadius: 20,
+        shadowColor: "rgba(0, 0, 2, 0.25)",
+        shadowOpacity: 1,
+        elevation: 3,
+        borderRadius: 38,
+        marginTop: 30,
+        marginBottom: 37,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 })
 
 export default Forecast

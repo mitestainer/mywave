@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import {View, ScrollView, Text, StyleSheet, Image} from 'react-native'
-// import Button from '../components/Button'
 import {RectButton} from 'react-native-gesture-handler'
 import {useNavigation} from '@react-navigation/native'
 import Picker from '../components/Picker'
-// import Checkbox from '../components/Checkbox'
 import CheckBox from '@react-native-community/checkbox'
 import DatePicker from 'react-native-datepicker'
 

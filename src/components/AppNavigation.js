@@ -2,12 +2,14 @@ import React from 'react'
 import {Image} from 'react-native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {createStackNavigator} from '@react-navigation/stack'
+import {Feather} from '@expo/vector-icons/'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
 
 import Main from '../pages/Main'
 import Forecast from '../pages/Forecast'
+import Beach from '../pages/Beach'
 import Log from '../pages/Log'
 import Log2 from '../pages/Log2'
 import Market from '../pages/Market'
@@ -16,10 +18,8 @@ import Settings from '../pages/Settings'
 
 import Header from '../components/Header'
 
-import {Feather} from '@expo/vector-icons/'
 const home = require('../images/icon-home.png')
 const note = require('../images/icon-note.png')
-// const cart = require('./images/icon-cart.png')
 const profile = require('../images/icon-profile.png')
 
 const ProfileNavigation = () => {
@@ -44,6 +44,7 @@ const ForecastNavigation = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Forecast" component={Forecast} options={{headerShown: true, header: () => <Header title="Previsão das Ondas" />}} />
+            <Stack.Screen name="Beach" component={Beach} options={{headerShown: true, header: () => <Header title="Comentários" />}} />
         </Stack.Navigator>
     )
 }
@@ -60,13 +61,13 @@ const AppNavigation = () => {
                         icon = <Image source={home} style={{opacity: focused ? 1 : 0.3}} />
                         break
                     case 'ForecastNavigation':
-                        icon = <Feather name="sun" size={24} style={{opacity: focused ? 1 : 0.3}} />
+                        icon = <Feather name="sun" size={24} style={{opacity: focused ? 1 : 0.3}} color="#0C4459" />
                         break
                     case 'LogNavigation':
                         icon = <Image source={note} style={{opacity: focused ? 1 : 0.3}} />
                         break
                     case 'Market':
-                        icon = <Feather name='shopping-cart' size={24} style={{opacity: focused ? 1 : 0.3}} />
+                        icon = <Feather name='shopping-cart' size={24} style={{opacity: focused ? 1 : 0.3}} color="#0C4459" />
                         break
                     case 'ProfileNavigation':
                         icon = <Image source={profile} style={{opacity: focused ? 1 : 0.3}} />
